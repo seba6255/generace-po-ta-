@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="cs">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="Sebastian Bitto">
+  <title>Generace počítačů</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main>
+    <header class="site-header">
+      <h1>Generace počítačů</h1>
+    </header>
+    <div class="layout">
+      <nav aria-label="Obsah stránky">
+        <ul>
+          <li><a href="#nulta-generace">Nultá generace</a>
+            <ul>
+              <li><a href="#rele">1.1 Jak funguje relé</a></li>
+              <li><a href="#logika">1.2 Dva spínače a modelová žárovka</a></li>
+              <li><a href="#historie">1.3 Historické karty</a></li>
+              <li><a href="#porovnani">1.4 Reléový stroj a mechanická kalkulačka</a></li>
+              <li><a href="#omezeni">1.5 Omezení reléových počítačů</a></li>
+            </ul>
+          </li>
+          <li><a href="#prvni-generace">První generace počítačů</a>
+            <ul>
+              <li><a href="#prvni-karty">2.1 ENIAC a UNIVAC I</a></li>
+            </ul>
+          </li>
+          <li><a href="#druha-generace">Druhá generace počítačů</a>
+            <ul>
+              <li><a href="#model">3.1 Model tranzistoru</a></li>
+              <li><a href="#pocitac">3.2 IBM 1401</a></li>
+              <li><a href="#srovnani">3.3 Elektronka versus tranzistor</a></li>
+              <li><a href="#casova-osa">3.4 Časová osa</a></li>
+              <li><a href="#otazky">3.5 Kontrolní otázky</a></li>
+            </ul>
+          </li>
+          <li><a href="#treti-generace">Třetí a čtvrtá generace</a>
+            <ul>
+              <li><a href="#urovne-cipu">4.1 Od tranzistoru k počítači</a></li>
+              <li><a href="#priklady-cipu">4.2 Intel 4004 a Altair 8800</a></li>
+              <li><a href="#generace-ic">4.3 Třetí a čtvrtá generace</a></li>
+              <li><a href="#pametovy-cip">4.4 Čip nemusí být procesor</a></li>
+              <li><a href="#osobni-pocitace">4.5 Proč se počítače zmenšovaly</a></li>
+            </ul>
+          </li>
+          <li><a href="#pata-generace">Pátá generace počítačů</a>
+            <ul>
+              <li><a href="#historicky-projekt">5.1 Projekt FGCS</a></li>
+              <li><a href="#smery-vyvoje">5.2 Dva současné směry</a></li>
+              <li><a href="#tvrzeni">5.3 Fakta, předpovědi a názory</a></li>
+              <li><a href="#predpoved">5.4 Předpověď na pět let</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="content">
+        <header class="content-header">
+          <h2>Od relé k tranzistorům</h2>
+          <p class="intro">Od elektromechanických relé přes elektronky až k tranzistorům: principy, příklady a omezení jednotlivých generací.</p>
+          <p class="student">Jméno: Sebastian Bitto &nbsp; Třída: S1I &nbsp; Datum: 16.10.2026. &nbsp; Rozvržení práce: 15 min čtení a plán • 55 min řešení • 20 min protokol a kontrola.</p>
+        </header>
+        <p class="note"><strong>Než začnu:</strong> Nultou generací se ve školním členění obvykle myslí elektromechanické počítače, které používaly relé. Relé je spínač ovládaný elektromagnetem. Tento protokol ukazuje jen model, žádné skutečné zapojení.</p>
+
+        <section id="nulta-generace">
+          <h2>1. Nultá generace počítačů</h2>
+          <section id="rele">
+            <h3>1.1 Jak funguje relé</h3>
+            <p>Po přivedení proudu do cívky vznikne magnetické pole. To přitáhne pohyblivou část relé a kontakty změní polohu. V jednoduchém modelu může sepnutý kontakt znamenat 1 a rozepnutý kontakt 0. Cívka a spínaný obvod jsou elektricky oddělené.</p>
+            <div class="diagram">
+              <svg viewBox="0 0 760 220" role="img" aria-labelledby="relay-title relay-desc">
+                <title id="relay-title">Zjednodušené schéma relé</title>
+                <desc id="relay-desc">Horní ovládací obvod obsahuje cívku. Přerušovaná čára naznačuje mechanické spojení s kontaktem ve spodním obvodu se žárovkou.</desc>
+                <g fill="none" stroke="#202820" stroke-width="3">
+                  <path d="M40 63 H205 M335 63 H500 V105" />
+                  <path d="M40 63 V105 M40 105 H205 M335 105 H500" />
+                  <path d="M40 105 V164 H100 M145 164 H235 M285 164 H390 M430 164 H500 V105" />
+                  <path d="M235 164 H279 M281 164 L322 139" />
+                  <path d="M281 164 H285" stroke-dasharray="5 6" />
+                  <path d="M270 105 V143" stroke-dasharray="5 6" />
+                  <path d="M40 54 V72 M48 58 V68 M500 96 V114 M508 100 V110" />
+                  <path d="M205 48 q10 15 20 0 t20 0 t20 0 t20 0 t20 0 t20 0" />
+                  <circle cx="123" cy="164" r="18" />
+                  <path d="M112 175 L134 153 M123 146 V138" />
+                </g>
+                <g fill="#202820" font-family="Georgia, serif" font-size="17">
+                  <text x="48" y="39">ovládací obvod</text><text x="236" y="31">cívka</text>
+                  <text x="48" y="204">napájení</text><text x="100" y="204">žárovka</text>
+                  <text x="235" y="204">spínaný kontakt</text><text x="518" y="108">spínaný obvod</text>
+                  <text x="326" y="132">pohyblivý kontakt</text>
+                </g>
+              </svg>
+              <p class="caption">Vlastní zjednodušený nákres: cívka pohne kontaktem, který otevře nebo uzavře druhý obvod.</p>
+            </div>
+          </section>
+          <section id="logika">
+            <h3>1.2 Dva spínače a modelová žárovka</h3>
+            <p>Stavy 0 a 1 znamenají rozepnutý a sepnutý spínač. U modelu za sebou musí být sepnuté oba spínače. U modelu vedle sebe stačí, aby byl sepnutý alespoň jeden.</p>
+            <div class="models">
+              <article class="model" data-model="series">
+                <h4>Spínače za sebou (AND)</h4>
+                <p>Obvod se uzavře, jen když jsou sepnuté oba spínače.</p>
+                <div class="circuit">
+                  <svg viewBox="0 0 440 150" role="img" aria-label="Dva otevřené spínače zapojené za sebou a žárovka">
+                    <g fill="none" stroke="#263329" stroke-width="3"><path d="M45 25 H100 M145 25 H200 M245 25 H335 V55 M335 95 V125 H45 V95 M45 55 V25" /><path d="M100 25 L132 10 M200 25 L232 10" /><path d="M29 56 H61 M36 94 H54" /><circle cx="335" cy="75" r="20" /><path d="M324 86 L346 64" /></g>
+                    <g fill="#263329" font-family="Arial, sans-serif" font-size="14"><text x="106" y="51">S1</text><text x="206" y="51">S2</text><text x="360" y="80">žárovka</text></g>
+                  </svg>
+                </div>
+                <table><thead><tr><th>S1</th><th>S2</th><th>Žárovka</th></tr></thead><tbody>
+                  <tr data-state="00"><td>0</td><td>0</td><td>0 – nesvítí</td></tr><tr data-state="01"><td>0</td><td>1</td><td>0 – nesvítí</td></tr>
+                  <tr data-state="10"><td>1</td><td>0</td><td>0 – nesvítí</td></tr><tr data-state="11"><td>1</td><td>1</td><td>1 – svítí</td></tr>
+                </tbody></table>
+              </article>
+              <article class="model" data-model="parallel">
+                <h4>Spínače vedle sebe (OR)</h4>
+                <p>Obvod se uzavře, když je sepnutý alespoň jeden spínač.</p>
+                <div class="circuit">
+                  <svg viewBox="0 0 440 155" role="img" aria-label="Dva spínače zapojené vedle sebe a žárovka">
+                    <g fill="none" stroke="#263329" stroke-width="3"><path d="M45 25 H72 M100 25 H130 V45 M130 45 V105 M130 45 H175 M220 45 H330 V105 M130 105 H175 M220 105 H330 M330 45 V105 M330 105 V130 H45 V95 M45 55 V25" /><path d="M175 45 L207 30 M175 105 L207 90" /><path d="M29 56 H61 M36 94 H54" /><circle cx="86" cy="25" r="14" /><path d="M78 33 L94 17" /></g>
+                    <g fill="#263329" font-family="Arial, sans-serif" font-size="14"><text x="175" y="68">S1</text><text x="175" y="128">S2</text><text x="66" y="13">žárovka</text></g>
+                  </svg>
+                </div>
+                <table><thead><tr><th>S1</th><th>S2</th><th>Žárovka</th></tr></thead><tbody>
+                  <tr data-state="00"><td>0</td><td>0</td><td>0 – nesvítí</td></tr><tr data-state="01"><td>0</td><td>1</td><td>1 – svítí</td></tr>
+                  <tr data-state="10"><td>1</td><td>0</td><td>1 – svítí</td></tr><tr data-state="11"><td>1</td><td>1</td><td>1 – svítí</td></tr>
+                </tbody></table>
+              </article>
+            </div>
+          </section>
+          <section id="historie">
+            <h3>1.3 Historické karty</h3>
+            <div class="cards">
+              <article class="history-card"><h4>Z3</h4><dl><dt>Rok</dt><dd>1941</dd><dt>Země</dt><dd>Německo</dd><dt>Spínací prvek</dt><dd>Elektromechanická relé</dd><dt>Účel</dt><dd>Experimentální programovatelný počítač; Zuse jej zamýšlel mimo jiné pro technické a aerodynamické výpočty.</dd></dl><p class="source"><strong>Zdroj:</strong> Computer History Museum, <a href="https://www.computerhistory.org/timeline/" target="_blank" rel="noopener noreferrer">Computer History Museum Timeline</a>. Datum citace: 16. 10. 2026.</p></article>
+              <article class="history-card"><h4>Harvard Mark I (IBM ASCC)</h4><dl><dt>Rok</dt><dd>1944</dd><dt>Země</dt><dd>Spojené státy americké</dd><dt>Spínací prvek</dt><dd>Elektromechanická relé; výpočty zároveň používaly mechanické čítače a hřídele.</dd><dt>Účel</dt><dd>Automatické provádění dlouhých výpočtů, mimo jiné pro potřeby amerického námořnictva.</dd></dl><p class="source"><strong>Zdroj:</strong> IBM, <a href="https://www.ibm.com/history/harvard-mark-1" target="_blank" rel="noopener noreferrer">Harvard Mark I</a>. Datum citace: 16. 10. 2026.</p></article>
+            </div>
+          </section>
+          <section id="porovnani"><h3>1.4 Reléový stroj a mechanická kalkulačka</h3><table><thead><tr><th>Vlastnost</th><th>Reléový počítač</th><th>Mechanická kalkulačka</th></tr></thead><tbody><tr><td>Jak pracuje</td><td>Relé přepínají elektrické obvody; výpočet může řídit program.</td><td>Čísla zpracovávají ozubená kola a další pohyblivé součásti.</td></tr><tr><td>Ovládání</td><td>Může provádět posloupnost kroků automaticky podle programu.</td><td>Obvykle ji obsluha zadává a ovládá ručně.</td></tr><tr><td>Rychlost a zvuk</td><td>Rychlejší než ruční zadávání jednotlivých kroků, ale relé cvakají a nejsou okamžitá.</td><td>Rychlost závisí na obsluze; pohyb součástí je také slyšet a cítit.</td></tr></tbody></table></section>
+          <section id="omezeni"><h3>1.5 Omezení reléových počítačů</h3><ol><li><strong>Nižší rychlost:</strong> kontakt se musí fyzicky pohnout a ustálit, takže relé nepřepíná tak rychle jako elektronický prvek.</li><li><strong>Opotřebení:</strong> při každém přepnutí se části dotknou nebo oddálí. Po mnoha cyklech se kontakty opotřebují a mohou potřebovat údržbu.</li><li><strong>Nespolehlivé zákmitové přepnutí:</strong> pohyblivý kontakt může po sepnutí krátce několikrát odskočit. Obvod proto někdy musí počkat nebo přidat další řízení, než výsledek použije.</li></ol></section>
+        </section>
+
+        <section id="prvni-generace">
+          <h2>2. První generace počítačů</h2>
+          <h3 id="prvni-karty">2.1 Muzejní karty: ENIAC a UNIVAC I</h3>
+          <div class="cards">
+            <article class="history-card"><h4>ENIAC</h4><dl><dt>Období uvedení</dt><dd>Stavba probíhala v letech 1943–1945; veřejně byl představen v roce 1946.</dd><dt>Účel</dt><dd>Vojenské výpočty, zejména tvorba tabulek pro výpočet dráhy dělostřeleckých střel.</dd><dt>Zadávání programu nebo dat</dt><dd>Program se nastavoval propojovacími kabely a přepínači na panelech; jeho příprava tedy vyžadovala ruční přepojení stroje.</dd></dl><p class="source"><strong>Muzejní zdroj:</strong> Computer History Museum, <a href="https://www.computerhistory.org/revolution/birth-of-the-computer/4/78" target="_blank" rel="noopener noreferrer">ENIAC</a> a <a href="https://www.computerhistory.org/timeline/1946/" target="_blank" rel="noopener noreferrer">Timeline of Computer History: 1946</a>. Přístup 22. 10. 2026.</p></article>
+            <article class="history-card"><h4>UNIVAC I</h4><dl><dt>Období uvedení</dt><dd>První stroj byl dodán americkému Census Bureau v roce 1951.</dd><dt>Účel</dt><dd>Obecné zpracování dat; první kus byl dodán statistickému úřadu, později se stroje používaly také ve státní správě a v podnicích.</dd><dt>Zadávání programu nebo dat</dt><dd>Šlo o počítač s uloženým programem. Data četl mimo jiné z magnetických pásek systému UNISERVO; pásky umožňovaly ukládat velké objemy dat.</dd></dl><p class="source"><strong>Muzejní zdroj:</strong> Computer History Museum, <a href="https://www.computerhistory.org/timeline/1951/" target="_blank" rel="noopener noreferrer">Timeline of Computer History: 1951</a>, <a href="https://www.computerhistory.org/timeline/memory-storage/" target="_blank" rel="noopener noreferrer">Timeline of Computer History: UNISERVO tape drive</a> a <a href="https://www.computerhistory.org/revolution/birth-of-the-computer/4/87" target="_blank" rel="noopener noreferrer">The Stored Program</a>. Přístup 22. 10. 2026.</p></article>
+          </div>
+          <h3>2.2 Relé versus elektronka</h3><table><thead><tr><th>Vlastnost</th><th>Relé</th><th>Elektronka</th></tr></thead><tbody><tr><td>Pohyblivé části při spínání</td><td>Ano, kontakty se mechanicky pohybují.</td><td>Ne, tok proudu se řídí elektronicky ve vakuové baňce.</td></tr><tr><td>Teplo a energie</td><td>Cívka při provozu spotřebovává energii; míra zahřívání závisí na obvodu.</td><td>Počítač s mnoha elektronkami potřebuje značný příkon a chlazení.</td></tr><tr><td>Rozměry</td><td>Relé jsou pomalejší a objemnější než jednotlivé elektronické prvky; rozsáhlý stroj mohl zabírat místnost.</td><td>Elektronky zabírají prostor a jejich velký počet vedl k rozměrným počítačům.</td></tr><tr><td>Typické omezení</td><td>Mechanické přepínání omezuje rychlost a kontakty se opotřebovávají.</td><td>Vysoká spotřeba, teplo a poruchovost součástek zvyšují nároky na údržbu.</td></tr></tbody></table><p class="caption">Jde o obecné srovnání součástek; konkrétní vlastnosti závisely na konstrukci celého stroje.</p>
+          <h3>2.3 Výpočet tabulky násobků čísla 7</h3>
+          <div class="diagram"><div class="flow" role="img" aria-label="Vstup číslo 7 a násobitel 1, 2, 3 vede přes násobení k výsledkům 7, 14, 21"><div class="flow-step"><strong>VSTUP</strong><br>číslo 7<br>násobitel 1, 2, 3</div><span class="flow-arrow" aria-hidden="true">→</span><div class="flow-step"><strong>ZPRACOVÁNÍ</strong><br>7 × n</div><span class="flow-arrow" aria-hidden="true">→</span><div class="flow-step"><strong>VÝSTUP</strong><br>7, 14, 21</div></div><p class="caption">Vlastní schéma; výpočty: 7 × 1 = 7, 7 × 2 = 14, 7 × 3 = 21.</p></div>
+          <div class="demo"><label for="factor">Vyzkoušej násobky jiného čísla</label><input id="factor" type="number" min="1" max="1000" step="1" value="7"><p id="calculation-status" aria-live="polite">Ukázkový vstup: 7. Výstupy jsou uvedené níže.</p><ol id="multiples"><li data-multiple>7 × 1 = 7</li><li data-multiple>7 × 2 = 14</li><li data-multiple>7 × 3 = 21</li></ol></div>
+          <h3>2.4 Muzejní fotografie: programátorky ENIACu</h3>
+          <figure class="photo"><a href="https://www.computerhistory.org/revolution/birth-of-the-computer/4/78/317" target="_blank" rel="noopener noreferrer"><img src="https://images.computerhistory.org/revonline/images/102618640-03-01.jpg?w=900" alt="Frances Bilas a Betty Jean Jennings stojí u ovládacích panelů počítače ENIAC"></a><figcaption>Archivní fotografie zachycuje programátorky Frances Bilas (později Spence) a Betty Jean Jennings (později Bartik) u hlavních ovládacích panelů ENIACu. Computer History Museum, záznam <a href="https://www.computerhistory.org/revolution/birth-of-the-computer/4/78/317" target="_blank" rel="noopener noreferrer">ENIAC programmers</a>; fotografie s laskavým svolením University of Pennsylvania Archives, autorská práva © University of Pennsylvania. Přístup 22. 10. 2026.</figcaption></figure>
+          <ol><li>Na snímku jsou dvě osoby stojící před zařízením.</li><li>V pozadí jsou vysoké panely s řadami ovládacích prvků.</li><li><strong>Odhad:</strong> panely sahají přibližně do výšky dospělého člověka; přesné rozměry z fotografie určit nelze.</li></ol>
+          <h3>2.5 Přehled pro návštěvníka muzea (85 slov)</h3><p class="intro">První generace (zhruba 40. a 50. léta 20. století) využívala elektronky ke spínání a elektronické obvody k výpočtům. Oproti relé se tok proudu řídil bez mechanicky pohyblivého kontaktu, což umožnilo výrazně vyšší rychlost. Elektronky však spotřebovávaly mnoho energie, zahřívaly se a poruchy vyžadovaly údržbu; zařízení proto často zabírala místnosti. Nešlo o jediný typ stroje: ENIAC se nastavoval kabely a přepínači, zatímco UNIVAC I pracoval s magnetickými páskami a sloužil i zpracování dat. Elektronkové počítače položily základy automatizovaného výpočtu, ale byly drahé, rozměrné a provozně náročné.</p>
+        </section>
+
+        <section id="druha-generace">
+          <h2>3. Druhá generace počítačů</h2><p class="intro">Od elektronky k tranzistoru: polovodičové součástky pomohly zmenšit a zefektivnit počítače.</p><p class="note"><strong>Důležité rozlišení:</strong> Tranzistor je součástka, ne celý procesor ani počítač. Číslicové obvody propojují mnoho spínacích prvků do složitější logiky. Následující model znázorňuje tranzistor jako řízený spínač, nikoli jako skutečné elektrické zapojení.</p>
+          <section id="model"><h3>3.1 Funkční model tranzistoru jako spínače</h3><p>Vstupní signál řídí spínač. Při signálu 0 je spínač otevřený a zátěž je vypnutá; při signálu 1 se spínač sepne a zátěž se zapne. Nákres je funkční pomůcka, ne návod k zapojení součástek.</p><div class="diagram"><svg viewBox="0 0 760 240" role="img" aria-labelledby="transistor-title transistor-desc"><title id="transistor-title">Funkční model tranzistoru jako řízeného spínače</title><desc id="transistor-desc">Vstupní signál ovládá tranzistorový spínač. Spínač řídí tok proudu ke zátěži, zde znázorněné žárovkou.</desc><defs><marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#263329" /></marker></defs><g fill="none" stroke="#263329" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><rect x="30" y="72" width="160" height="80" rx="8" fill="#eef3ec" /><path d="M190 112 H260" marker-end="url(#arrowhead)" /><rect x="280" y="52" width="200" height="120" rx="8" fill="#ffffff" /><path d="M480 112 H560" marker-end="url(#arrowhead)" /></g><path d="M330 112 H370 M370 90 V134 M370 112 H420" fill="none" stroke="#263329" stroke-width="4" stroke-linecap="round" /><circle cx="625" cy="112" r="25" fill="#ffffff" stroke="#263329" stroke-width="4" /><path d="M608 129 L642 95 M625 78 V65" fill="none" stroke="#263329" stroke-width="3" /><g fill="#202820" font-family="Arial, sans-serif" font-size="18" text-anchor="middle"><text x="110" y="106">Vstupní</text><text x="110" y="130">signál 0 / 1</text><text x="380" y="84">Tranzistor</text><text x="380" y="155">řízený spínač</text><text x="625" y="164">Zátěž</text><text x="520" y="93">výstup</text></g></svg><p class="caption">Vlastní funkční náčrt: signál řídí spínač a ten zapíná nebo vypíná zátěž.</p></div></section>
+          <section id="pocitac"><h3>3.2 Karta tranzistorového počítače: IBM 1401</h3><article class="history-card"><h4>IBM 1401</h4><dl><dt>Rok</dt><dd>1959</dd><dt>Využití</dt><dd>Zpracování obchodních dat, například účetnictví, fakturace a evidence zásob.</dd><dt>Výrobce</dt><dd>IBM (International Business Machines).</dd><dt>Proč patří do tématu</dt><dd>Počítač používal tranzistorové obvody; není to „jeden tranzistor“, ale celý systém sestavený z mnoha součástek.</dd></dl><p class="source"><strong>Zdroje:</strong> IBM, <a href="https://www.ibm.com/history/1401" target="_blank" rel="noopener noreferrer">IBM 1401 Data Processing System</a>, a Computer History Museum, <a href="https://www.computerhistory.org/siliconengine/timeline/" target="_blank" rel="noopener noreferrer">The Silicon Engine: Timeline</a>. Přístup 4. 11. 2026.</p></article></section>
+          <section id="srovnani"><h3>3.3 Elektronka versus tranzistor</h3><p>Srovnání popisuje obecné vlastnosti součástek a jejich běžný dopad na návrh počítačů; nejde o stejný číselný poměr pro všechny stroje.</p><table><thead><tr><th>Vlastnost</th><th>Elektronka</th><th>Tranzistor</th></tr></thead><tbody><tr><th scope="row">Velikost</th><td>Obvykle větší součástka, která potřebuje místo pro skleněnou baňku.</td><td>Obvykle menší součástka; obvody tak mohly být kompaktnější.</td></tr><tr><th scope="row">Spotřeba a teplo</th><td>Často vyžaduje více energie a vytváří více tepla, mimo jiné kvůli zahřívání katody.</td><td>Obvykle má nižší spotřebu a méně se zahřívá, záleží však na typu a zapojení.</td></tr><tr><th scope="row">Spínání</th><td>Řídí tok elektronů ve vakuové baňce bez pohyblivého kontaktu.</td><td>Řídí proud v polovodičovém materiálu; může pracovat jako elektronický spínač.</td></tr><tr><th scope="row">Odolnost a údržba</th><td>Křehká baňka a provozní teplo zvyšují nároky na chlazení a výměnu vadných součástek.</td><td>Pevná polovodičová součástka je odolnější vůči otřesům a nevyžaduje žhavenou katodu.</td></tr><tr><th scope="row">Rozměry celého stroje</th><td>Mnoho elektronek přispívalo k velkým a náročným počítačům.</td><td>Menší součástky umožnily navrhovat menší počítače; výsledek závisel také na dalších částech stroje.</td></tr></tbody></table><p class="source"><strong>Zdroj k vývoji tranzistorů a polovodičů:</strong> Computer History Museum, <a href="https://www.computerhistory.org/siliconengine/timeline/" target="_blank" rel="noopener noreferrer">The Silicon Engine: Timeline</a>. Přístup 4. 11. 2026. Popisy jsou vlastní shrnutí obecných rozdílů.</p></section>
+          <section id="casova-osa"><h3>3.4 Časová osa spínacích technologií</h3><div class="timeline" role="list" aria-label="Vývoj od mechanických prvků k tranzistorům"><article class="timeline-step" role="listitem"><h3>Mechanika</h3><p>Ozubená kola prováděla výpočty bez elektronického spínání. <strong>Přínos změny:</strong> mechanické součástky umožnily výpočty automatizovat.</p></article><article class="timeline-step" role="listitem"><h3>Relé</h3><p>Elektromagnet pohyboval kontaktem a ovládal elektrický obvod. <strong>Přínos změny:</strong> elektrické řízení dovolilo sestavovat programovatelné stroje.</p></article><article class="timeline-step" role="listitem"><h3>Elektronka</h3><p>Elektronický prvek spínal proud bez mechanicky pohyblivého kontaktu. <strong>Přínos změny:</strong> počítače pracovaly rychleji než s relé.</p></article><article class="timeline-step" role="listitem"><h3>Tranzistor</h3><p>Polovodič nahradil elektronku v řadě obvodů. <strong>Přínos změny:</strong> zařízení mohla být menší, úspornější a méně náročná na chlazení.</p></article></div><p class="source"><strong>Historický přehled:</strong> Computer History Museum, <a href="https://www.computerhistory.org/siliconengine/timeline/" target="_blank" rel="noopener noreferrer">The Silicon Engine: Timeline</a>. Přístup 4. 11. 2026. Časová osa je zjednodušená: technologie se v různých strojích překrývaly.</p></section>
+          <section id="otazky"><h3>3.5 Kontrolní otázky a odpovědi</h3><ol><li><strong>Co dělá tranzistor v modelu spínače?</strong><br>Vstupní signál řídí, zda tranzistor dovolí průchod proudu do zátěže.</li><li><strong>Je tranzistor totéž co procesor?</strong><br>Ne. Tranzistor je jedna součástka; procesor obsahuje mnoho propojených obvodů a součástek.</li><li><strong>Uveď jeden důvod, proč tranzistory pomohly zmenšit počítače.</strong><br>Jednotlivý tranzistor je obvykle menší než elektronka, takže obvod mohl být sestaven kompaktněji.</li><li><strong>K čemu sloužil počítač IBM 1401?</strong><br>Ke zpracování obchodních dat, například účetních a skladových záznamů.</li></ol></section>
+          <p class="note"><strong>Kontrola před odevzdáním:</strong> Nezaměňuji tranzistor s integrovaným obvodem ani celým počítačem. Údaje z externích zdrojů mají uveden název, odkaz a datum přístupu.</p>
+        </section>
+
+        <section id="treti-generace">
+          <h2>Třetí a čtvrtá generace – integrovaný obvod a mikroprocesor</h2>
+          <p class="intro">Integrovaný obvod sdružuje více elektronických prvků na jednom čipu. Ve školním členění je typický pro třetí generaci. Mikroprocesor soustřeďuje funkce procesoru do integrovaného obvodu a spojuje se se čtvrtou generací. Počítač však dál potřebuje paměť, napájení a vstupy či výstupy. Čip tedy nemusí být procesor.</p>
+          <h3>Postup a úkoly</h3><ol><li>Nakresli čtyři úrovně – tranzistor, integrovaný obvod, mikroprocesor a počítač – a u každé uveď jednu funkci.</li><li>Vyhledej Intel 4004 a jeden raný osobní počítač; uveď rok, účel a primární nebo muzejní zdroj.</li><li>Porovnej třetí a čtvrtou generaci podle typického prvku, velikosti zařízení, využití a příkladu. Upozorni, že hranice generací nejsou ostré.</li><li>Na příkladu paměťového čipu vysvětli, proč neplatí, že každý čip je procesor.</li><li>Napiš 80–100 slov o tom, jak zmenšování součástek přispělo k osobním počítačům.</li></ol>
+          <section id="urovne-cipu"><h3>4.1 Od tranzistoru k počítači</h3><p>Jednotlivé úrovně na sebe navazují: součástky tvoří obvody a obvody jsou součástí počítačového systému.</p><div class="diagram"><svg viewBox="0 0 760 360" role="img" aria-labelledby="levels-title levels-desc"><title id="levels-title">Čtyři úrovně od tranzistoru k počítači</title><desc id="levels-desc">Tranzistor spíná nebo zesiluje signál. Integrovaný obvod spojuje více prvků. Mikroprocesor vykonává instrukce jako procesor. Počítač zpracovává programy s pomocí paměti, vstupů a výstupů.</desc><g fill="#ffffff" stroke="#426a4a" stroke-width="2"><rect x="70" y="12" width="620" height="62" rx="8" /><rect x="70" y="103" width="620" height="62" rx="8" /><rect x="70" y="194" width="620" height="62" rx="8" /><rect x="70" y="285" width="620" height="62" rx="8" /></g><g fill="#202820" font-family="Arial, sans-serif" text-anchor="middle"><text x="380" y="38" font-size="18" font-weight="bold">1. Tranzistor</text><text x="380" y="59" font-size="15">spíná nebo zesiluje elektrický signál</text><text x="380" y="129" font-size="18" font-weight="bold">2. Integrovaný obvod</text><text x="380" y="150" font-size="15">sdružuje více prvků a provádí funkci obvodu</text><text x="380" y="220" font-size="18" font-weight="bold">3. Mikroprocesor</text><text x="380" y="241" font-size="15">načítá a vykonává instrukce jako procesor</text><text x="380" y="311" font-size="18" font-weight="bold">4. Počítač</text><text x="380" y="332" font-size="15">zpracovává programy pomocí paměti a vstupů/výstupů</text></g><g fill="none" stroke="#426a4a" stroke-width="3"><path d="M380 74 V96 M372 88 L380 96 L388 88" /><path d="M380 165 V187 M372 179 L380 187 L388 179" /><path d="M380 256 V278 M372 270 L380 278 L388 270" /></g></svg><p class="caption">Schéma zobrazuje součástku, obvod, procesor a celý systém. Počítač se skládá z více částí, nejen z procesoru.</p></div></section>
+          <section id="priklady-cipu"><h3>4.2 Dva příklady z počátků mikroprocesorů a osobních počítačů</h3><div class="cards"><article class="history-card"><h4>Intel 4004</h4><dl><dt>Rok</dt><dd>1971</dd><dt>Účel</dt><dd>Vznikl v rámci zakázky pro kalkulačku Busicom 141-PF. Intel jej představil jako programovatelný mikroprocesor pro zpracování instrukcí.</dd><dt>Proč je důležitý</dt><dd>Procesorové funkce byly soustředěny do jediného čipu. Mikroprocesor je tedy zvláštní typ integrovaného obvodu, ne synonymum pro každý čip.</dd></dl><p class="source"><strong>Primární zdroj:</strong> Intel, <a href="https://www.intel.com/content/www/us/en/history/virtual-vault/articles/the-intel-4004.html" target="_blank" rel="noopener noreferrer">The Intel 4004</a>. Přístup 5. 11. 2026.</p></article><article class="history-card"><h4>Altair 8800</h4><dl><dt>Rok</dt><dd>1975</dd><dt>Účel</dt><dd>Počítačová stavebnice pro nadšence, určená k sestavení a programování. Uživatelé zadávali příkazy přepínači a výstup sledovali na kontrolkách.</dd><dt>Proč je důležitý</dt><dd>Patřil k raným osobním počítačům a zpřístupnil práci s počítačem jednotlivcům mimo velké instituce.</dd></dl><p class="source"><strong>Muzejní zdroj:</strong> Computer History Museum, <a href="https://www.computerhistory.org/timeline/1975/" target="_blank" rel="noopener noreferrer">Timeline of Computer History: 1975</a>. Přístup 5. 11. 2026.</p></article></div></section>
+          <section id="generace-ic"><h3>4.3 Třetí a čtvrtá generace</h3><p>Školní rozdělení zdůrazňuje typický prvek; roky i hranice generací se v různých přehledech mohou lišit a nejsou ostré.</p><div class="diagram"><table><thead><tr><th>Generace</th><th>Typický prvek</th><th>Velikost zařízení</th><th>Využití</th><th>Příklad</th></tr></thead><tbody><tr><th scope="row">Třetí</th><td>Integrované obvody s více propojenými prvky</td><td>Často stále skříňový systém či počítač pro sál, menší než starší stroje</td><td>Podnikové, vědecké a institucionální zpracování dat</td><td>IBM System/360</td></tr><tr><th scope="row">Čtvrtá</th><td>Mikroprocesor – procesorové funkce na jednom čipu</td><td>Možné jsou stolní, osobní a později přenosné počítače</td><td>Výpočty a zpracování dat dostupné jednotlivcům, školám i firmám</td><td>Altair 8800</td></tr></tbody></table></div><p class="source"><strong>Historické přehledy:</strong> Computer History Museum, <a href="https://www.computerhistory.org/siliconengine/timeline/" target="_blank" rel="noopener noreferrer">The Silicon Engine: Timeline</a> a <a href="https://www.computerhistory.org/timeline/1964/" target="_blank" rel="noopener noreferrer">Timeline of Computer History: 1964</a> (IBM System/360). Časové hranice generací jsou zjednodušené.</p></section>
+          <section id="pametovy-cip"><h3>4.4 Čip nemusí být procesor</h3><p>Příkladem je paměťový čip Intel 1103: ukládá data v paměťových buňkách DRAM, ale sám nevykonává instrukce jako procesor. Je to integrovaný obvod s jinou úlohou. Počítač může obsahovat samostatný procesorový čip i několik paměťových čipů; k fungování potřebuje také napájení a vstupy či výstupy.</p><p class="source"><strong>Muzejní zdroj:</strong> Computer History Museum, <a href="https://www.computerhistory.org/timeline/memory-storage/#169ebbe2ad45559efbc6eb35720a2e7b" target="_blank" rel="noopener noreferrer">Intel 1103 memory chip</a>.</p></section>
+          <section id="osobni-pocitace"><h3>4.5 Proč se počítače zmenšovaly (86 slov)</h3><p class="intro">Zmenšování součástek umožnilo umístit více logických prvků na menší plochu a zkracovalo propojení mezi nimi. Integrované obvody proto zabíraly méně místa než stejné množství samostatných součástek a jejich výroba ve větších sériích mohla snižovat cenu. S příchodem mikroprocesoru se funkce procesoru soustředily do jediného čipu, což zjednodušilo návrh menších počítačů. Menší rozměry a nižší cena umožnily vznik počítačových stavebnic a později osobních počítačů pro domácnosti, školy a malé firmy. Nešlo jen o čip: k praktickému počítači byly potřeba také paměť, napájení, vstupy, výstupy a dostupný software.</p></section>
+          <p class="note"><strong>Kontrola před odevzdáním:</strong> Pojmy integrovaný obvod a mikroprocesor nepoužívám jako úplná synonyma.</p><p class="source"><strong>Výchozí zdroj nebo nástroj:</strong> <a href="https://www.computerhistory.org/siliconengine/timeline/" target="_blank" rel="noopener noreferrer">https://www.computerhistory.org/siliconengine/timeline/</a></p>
+        </section>
+
+        <section id="pata-generace">
+          <h2>5. Pátá generace počítačů</h2><p class="intro">Pátá generace se často spojuje se znalostními systémy a umělou inteligencí. Nejde ale o generaci jednoznačně určenou jedním druhem součástky. Dnešní vývoj zahrnuje specializované čipy, paralelní výpočty i kvantové počítače. Výsledky i předpovědi je třeba posuzovat podle konkrétní úlohy.</p>
+          <h3>Postup a úkoly</h3><ol><li>Stručně popiš cíl, místo a období projektu Fifth Generation Computer Systems (FGCS).</li><li>Vyber dva současné směry a u každého uveď výsledek, vhodné použití a omezení.</li><li>Vytvoř tabulku čtyř tvrzení a označ je jako doložený fakt, předpověď, nebo názor. Zdůvodni každé označení.</li><li>Napiš vlastní předpověď na pět let a uveď dvě podmínky, které by musely nastat.</li></ol>
+          <section id="historicky-projekt"><h3>5.1 Historická poznámka: Fifth Generation Computer Systems</h3><p>Japonský projekt FGCS byl zahájen v roce 1982 pod vedením ministerstva MITI. Desetiletý výzkumný program plánovaný na roky 1982–1992 koordinoval institut ICOT v Tokiu; závěrečné projektové aktivity pokračovaly do roku 1994. Cílem bylo vyvíjet počítače pro zpracování znalostí a umělou inteligenci, mimo jiné pomocí logického programování a paralelních inferenčních strojů. Šlo o výzkumný program s konkrétním cílem, ne o obecně přijatou definici všech počítačů „páté generace“.</p><p class="source"><strong>Zdroje:</strong> K. Moto-oka, „Fifth-Generation Computer Systems: A Japanese Project“, <em>IEEE Micro</em>, 1984, <a href="https://doi.org/10.1109/MC.1984.1659076" target="_blank" rel="noopener noreferrer">záznam článku</a>; přehled <a href="https://en.wikipedia.org/wiki/Fifth_Generation_Computer_Systems" target="_blank" rel="noopener noreferrer">Fifth Generation Computer Systems</a>. Přístup 10. 11. 2026.</p></section>
+          <section id="smery-vyvoje"><h3>5.2 Dvě karty současných směrů</h3><div class="cards">
+            <article class="history-card"><h4>Směr A: specializované čipy pro AI</h4><dl><dt>Co už bylo předvedeno</dt><dd>Google představil Ironwood, sedmou generaci svého TPU, navrženou zejména pro inferenci (vytváření odpovědí již natrénovaným modelem). Uvádí škálování až na 9&nbsp;216 čipů; téměř 10 MW se týká velké propojené sestavy, ne jednoho čipu.</dd><dt>K čemu se to hodí</dt><dd>Provoz a obsluhu rozsáhlých modelů AI, pokud lze jejich výpočty efektivně rozdělit a nasadit na specializovaný akcelerátor.</dd><dt>Omezení</dt><dd>TPU je specializované zařízení, nikoli náhrada univerzálního počítače. Velké nasazení vyžaduje datacentrum, energii, chlazení i vhodný software; výrobní údaje Googlu navíc nejsou nezávislým srovnáním všech čipů.</dd></dl><p class="source"><strong>Zdroj výrobce:</strong> Google Cloud, <a href="https://blog.google/innovation-and-ai/infrastructure-and-cloud/google-cloud/ironwood-tpu-age-of-inference/" target="_blank" rel="noopener noreferrer">Ironwood TPU and the age of inference</a>, aktualizováno 23. 4. 2025. Přístup 10. 11. 2026.</p></article>
+            <article class="history-card"><h4>Směr B: kvantové počítače</h4><dl><dt>Co už bylo předvedeno</dt><dd>Google oznámil čip Willow se 105 fyzickými qubity a experiment, v němž se při zvětšování kódové mřížky zmenšovala chybovost logického qubitu. Jde o výsledek výzkumu korekce chyb, ne o důkaz obecně užitečného kvantového počítače.</dd><dt>K čemu se to hodí</dt><dd>Výzkumným cílem je využít kvantové vlastnosti pro některé specifické úlohy, například simulaci kvantových systémů. Není důvod předpokládat, že kvantový počítač zrychlí každý běžný výpočet.</dd><dt>Omezení</dt><dd>Qubity jsou citlivé na rušení a chyby. Korekce chyb potřebuje další prostředky a praktické algoritmy jsou stále předmětem výzkumu; laboratorní demonstrace sama neprokazuje výhodu v běžné aplikaci.</dd></dl><p class="source"><strong>Zdroj výzkumného týmu Google:</strong> <a href="https://research.google/blog/making-quantum-error-correction-work/" target="_blank" rel="noopener noreferrer">Making quantum error correction work</a>, 9. 12. 2024. Přístup 10. 11. 2026.</p></article>
+          </div></section>
+          <section id="tvrzeni"><h3>5.3 Tabulka tvrzení: fakt, předpověď, nebo názor?</h3><div class="diagram"><table><thead><tr><th>Tvrzení</th><th>Označení</th><th>Proč</th></tr></thead><tbody><tr><td>Google uvádí, že Ironwood je určen pro AI inferenci a lze jej škálovat až na 9&nbsp;216 čipů.</td><td>Doložený fakt o oznámení výrobce</td><td>Údaj je uveden v publikovaném materiálu Googlu; dokládá, co výrobce oznámil, nikoli nezávislé srovnání výkonu.</td></tr><tr><td>Ve Willow se při zvětšení testované kódové mřížky podařilo snížit chybovost logického qubitu.</td><td>Doložený fakt o popsaném experimentu</td><td>Výsledek a postup jsou popsány výzkumným týmem; sám o sobě nedokazuje praktické využití pro všechny úlohy.</td></tr><tr><td>Do roku 2031 budou specializované AI akcelerátory běžnou součástí více osobních a okrajových zařízení.</td><td>Předpověď</td><td>Mluví o budoucnosti; výsledek závisí například na ceně, spotřebě, dostupnosti čipů a vhodném softwaru.</td></tr><tr><td>Kvantové počítače jsou lepší než klasické počítače.</td><td>Názor / nepodložené zobecnění</td><td>Neříká, pro kterou úlohu se výkon porovnává. Kvantové počítače mohou být užitečné jen pro určité typy problémů a současné stroje mají omezení.</td></tr></tbody></table></div></section>
+          <section id="predpoved"><h3>5.4 Vlastní předpověď na pět let</h3><p>Do roku 2031 budou specializované čipy pro AI častější v datacentrech a některých osobních či okrajových zařízeních, ale kvantové počítače podle mě zůstanou převážně výzkumným nebo specializovaným nástrojem. Tato předpověď se splní, pokud: <strong>1)</strong> se podaří zlepšit výkon AI výpočtů na watt a snížit cenu jejich provozu; <strong>2)</strong> vznikne dostupný software, který umožní vývojářům tyto čipy účelně využívat. Jde o odhad, ne ověřený fakt.</p></section>
+          <p class="note"><strong>Kontrola před odevzdáním:</strong> U každého směru odděluji předvedený výsledek, vhodné použití a omezení. Firemní oznámení označuji jako údaje výrobce. Neslibuji jistý vývoj a každé převzaté tvrzení lze dohledat.</p><p class="source"><strong>Výchozí zdroj nebo nástroj:</strong> <a href="https://www.computerhistory.org/timeline/" target="_blank" rel="noopener noreferrer">https://www.computerhistory.org/timeline/</a></p>
+        </section>
+      </article>
+    </div>
+  </main>
+</body>
+</html>
