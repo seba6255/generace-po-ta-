@@ -56,6 +56,14 @@
               <li><a href="#predpoved">5.4 Předpověď na pět let</a></li>
             </ul>
           </li>
+          <li><a href="#hardwarove-architektury">Hardwarové architektury</a>
+            <ul>
+              <li><a href="#architektury-schemata">6.1 Von Neumann a Harvard</a></li>
+              <li><a href="#prubeh-instrukce">6.2 Průchod instrukce</a></li>
+              <li><a href="#rozdil-architektur">6.3 Hlavní rozdíl</a></li>
+              <li><a href="#historicky-prehled">6.4 Historické mezníky</a></li>
+            </ul>
+          </li>
         </ul>
       </nav>
       <article class="content">
@@ -180,7 +188,6 @@
           <section id="osobni-pocitace"><h3>4.5 Proč se počítače zmenšovaly (86 slov)</h3><p class="intro">Zmenšování součástek umožnilo umístit více logických prvků na menší plochu a zkracovalo propojení mezi nimi. Integrované obvody proto zabíraly méně místa než stejné množství samostatných součástek a jejich výroba ve větších sériích mohla snižovat cenu. S příchodem mikroprocesoru se funkce procesoru soustředily do jediného čipu, což zjednodušilo návrh menších počítačů. Menší rozměry a nižší cena umožnily vznik počítačových stavebnic a později osobních počítačů pro domácnosti, školy a malé firmy. Nešlo jen o čip: k praktickému počítači byly potřeba také paměť, napájení, vstupy, výstupy a dostupný software.</p></section>
           <p class="note"><strong>Kontrola před odevzdáním:</strong> Pojmy integrovaný obvod a mikroprocesor nepoužívám jako úplná synonyma.</p><p class="source"><strong>Výchozí zdroj nebo nástroj:</strong> <a href="https://www.computerhistory.org/siliconengine/timeline/" target="_blank" rel="noopener noreferrer">https://www.computerhistory.org/siliconengine/timeline/</a></p>
         </section>
-
         <section id="pata-generace">
           <h2>5. Pátá generace počítačů</h2><p class="intro">Pátá generace se často spojuje se znalostními systémy a umělou inteligencí. Nejde ale o generaci jednoznačně určenou jedním druhem součástky. Dnešní vývoj zahrnuje specializované čipy, paralelní výpočty i kvantové počítače. Výsledky i předpovědi je třeba posuzovat podle konkrétní úlohy.</p>
           <h3>Postup a úkoly</h3><ol><li>Stručně popiš cíl, místo a období projektu Fifth Generation Computer Systems (FGCS).</li><li>Vyber dva současné směry a u každého uveď výsledek, vhodné použití a omezení.</li><li>Vytvoř tabulku čtyř tvrzení a označ je jako doložený fakt, předpověď, nebo názor. Zdůvodni každé označení.</li><li>Napiš vlastní předpověď na pět let a uveď dvě podmínky, které by musely nastat.</li></ol>
@@ -192,6 +199,122 @@
           <section id="tvrzeni"><h3>5.3 Tabulka tvrzení: fakt, předpověď, nebo názor?</h3><div class="diagram"><table><thead><tr><th>Tvrzení</th><th>Označení</th><th>Proč</th></tr></thead><tbody><tr><td>Google uvádí, že Ironwood je určen pro AI inferenci a lze jej škálovat až na 9&nbsp;216 čipů.</td><td>Doložený fakt o oznámení výrobce</td><td>Údaj je uveden v publikovaném materiálu Googlu; dokládá, co výrobce oznámil, nikoli nezávislé srovnání výkonu.</td></tr><tr><td>Ve Willow se při zvětšení testované kódové mřížky podařilo snížit chybovost logického qubitu.</td><td>Doložený fakt o popsaném experimentu</td><td>Výsledek a postup jsou popsány výzkumným týmem; sám o sobě nedokazuje praktické využití pro všechny úlohy.</td></tr><tr><td>Do roku 2031 budou specializované AI akcelerátory běžnou součástí více osobních a okrajových zařízení.</td><td>Předpověď</td><td>Mluví o budoucnosti; výsledek závisí například na ceně, spotřebě, dostupnosti čipů a vhodném softwaru.</td></tr><tr><td>Kvantové počítače jsou lepší než klasické počítače.</td><td>Názor / nepodložené zobecnění</td><td>Neříká, pro kterou úlohu se výkon porovnává. Kvantové počítače mohou být užitečné jen pro určité typy problémů a současné stroje mají omezení.</td></tr></tbody></table></div></section>
           <section id="predpoved"><h3>5.4 Vlastní předpověď na pět let</h3><p>Do roku 2031 budou specializované čipy pro AI častější v datacentrech a některých osobních či okrajových zařízeních, ale kvantové počítače podle mě zůstanou převážně výzkumným nebo specializovaným nástrojem. Tato předpověď se splní, pokud: <strong>1)</strong> se podaří zlepšit výkon AI výpočtů na watt a snížit cenu jejich provozu; <strong>2)</strong> vznikne dostupný software, který umožní vývojářům tyto čipy účelně využívat. Jde o odhad, ne ověřený fakt.</p></section>
           <p class="note"><strong>Kontrola před odevzdáním:</strong> U každého směru odděluji předvedený výsledek, vhodné použití a omezení. Firemní oznámení označuji jako údaje výrobce. Neslibuji jistý vývoj a každé převzaté tvrzení lze dohledat.</p><p class="source"><strong>Výchozí zdroj nebo nástroj:</strong> <a href="https://www.computerhistory.org/timeline/" target="_blank" rel="noopener noreferrer">https://www.computerhistory.org/timeline/</a></p>
+        </section>
+
+        <section id="hardwarove-architektury">
+          <h2>6. Hardwarové architektury</h2>
+          <p class="intro">Porovnání zjednodušených modelů von Neumannovy a Harvardské architektury.</p>
+
+          <section id="architektury-schemata">
+            <h3>6.1 Dvě schémata</h3>
+            <div class="architecture-diagrams">
+              <article class="architecture-panel">
+                <h4>Von Neumannův model</h4>
+                <div class="diagram">
+                  <svg viewBox="0 0 620 300" role="img" aria-labelledby="von-title von-desc">
+                    <title id="von-title">Von Neumannův model</title>
+                    <desc id="von-desc">Procesor je propojen jednou sdílenou pamětí pro instrukce i data jednou přenosovou cestou.</desc>
+                    <defs><marker id="von-arrow" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#426a4a"/></marker></defs>
+                    <rect x="40" y="85" width="150" height="130" rx="8" fill="#eef3ec" stroke="#426a4a" stroke-width="3"/>
+                    <text x="115" y="115" fill="#202820" text-anchor="middle" font-size="19" font-family="Arial, sans-serif" font-weight="bold">PROCESOR</text>
+                    <text x="115" y="145" fill="#202820" text-anchor="middle" font-size="15" font-family="Arial, sans-serif">načte • dekóduje</text>
+                    <text x="115" y="170" fill="#202820" text-anchor="middle" font-size="15" font-family="Arial, sans-serif">• vykoná</text>
+                    <rect x="390" y="85" width="180" height="130" rx="8" fill="#fff7dc" stroke="#426a4a" stroke-width="3"/>
+                    <text x="480" y="125" fill="#202820" text-anchor="middle" font-size="19" font-family="Arial, sans-serif" font-weight="bold">SDÍLENÁ PAMĚŤ</text>
+                    <text x="480" y="155" fill="#202820" text-anchor="middle" font-size="15" font-family="Arial, sans-serif">instrukce i data</text>
+                    <text x="480" y="180" fill="#202820" text-anchor="middle" font-size="15" font-family="Arial, sans-serif">společná cesta</text>
+                    <path d="M190 128 H390" fill="none" stroke="#426a4a" stroke-width="4" marker-end="url(#von-arrow)"/>
+                    <path d="M390 172 H190" fill="none" stroke="#426a4a" stroke-width="4" marker-end="url(#von-arrow)"/>
+                    <text x="290" y="112" fill="#202820" text-anchor="middle" font-size="14" font-family="Arial, sans-serif">instrukce</text>
+                    <text x="290" y="202" fill="#202820" text-anchor="middle" font-size="14" font-family="Arial, sans-serif">data</text>
+                  </svg>
+                  <p class="caption">Program i data sdílejí paměť i přenosovou cestu.</p>
+                </div>
+              </article>
+              <article class="architecture-panel">
+                <h4>Harvardský model</h4>
+                <div class="diagram">
+                  <svg viewBox="0 0 620 300" role="img" aria-labelledby="harvard-title harvard-desc">
+                    <title id="harvard-title">Harvardský model</title>
+                    <desc id="harvard-desc">Procesor má samostatnou paměť a cestu pro instrukce a samostatnou paměť a cestu pro data.</desc>
+                    <defs><marker id="harvard-arrow" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#426a4a"/></marker></defs>
+                    <rect x="235" y="85" width="150" height="130" rx="8" fill="#eef3ec" stroke="#426a4a" stroke-width="3"/>
+                    <text x="310" y="115" fill="#202820" text-anchor="middle" font-size="19" font-family="Arial, sans-serif" font-weight="bold">PROCESOR</text>
+                    <text x="310" y="145" fill="#202820" text-anchor="middle" font-size="15" font-family="Arial, sans-serif">načte • dekóduje</text>
+                    <text x="310" y="170" fill="#202820" text-anchor="middle" font-size="15" font-family="Arial, sans-serif">• vykoná</text>
+                    <rect x="40" y="35" width="155" height="95" rx="8" fill="#fff7dc" stroke="#426a4a" stroke-width="3"/>
+                    <text x="117" y="72" fill="#202820" text-anchor="middle" font-size="17" font-family="Arial, sans-serif" font-weight="bold">PAMĚŤ</text>
+                    <text x="117" y="100" fill="#202820" text-anchor="middle" font-size="15" font-family="Arial, sans-serif">INSTRUKCÍ</text>
+                    <rect x="425" y="170" width="155" height="95" rx="8" fill="#fff7dc" stroke="#426a4a" stroke-width="3"/>
+                    <text x="502" y="207" fill="#202820" text-anchor="middle" font-size="17" font-family="Arial, sans-serif" font-weight="bold">PAMĚŤ DAT</text>
+                    <text x="502" y="235" fill="#202820" text-anchor="middle" font-size="15" font-family="Arial, sans-serif">HODNOTY</text>
+                    <path d="M195 82 H235 V115" fill="none" stroke="#426a4a" stroke-width="4" marker-end="url(#harvard-arrow)"/>
+                    <path d="M385 185 H425 V218" fill="none" stroke="#426a4a" stroke-width="4" marker-end="url(#harvard-arrow)"/>
+                    <text x="208" y="71" fill="#202820" font-size="13" font-family="Arial, sans-serif">instrukční cesta</text>
+                    <text x="400" y="208" fill="#202820" font-size="13" font-family="Arial, sans-serif">datová cesta</text>
+                  </svg>
+                  <p class="caption">Paměť instrukcí a paměť dat jsou oddělené, stejně jako jejich přenosové cesty.</p>
+                </div>
+              </article>
+            </div>
+          </section>
+
+          <section id="prubeh-instrukce">
+            <h3>6.2 Průchod modelové instrukce: „přičti 3 k hodnotě 5“</h3>
+            <div class="instruction-flow">
+              <article class="instruction-step">
+                <h4>1. Načtení (fetch)</h4>
+                <p>Procesor načte z paměti instrukci, která říká: přičti k hodnotě 5 číslo 3.</p>
+              </article>
+              <span class="instruction-arrow" aria-hidden="true">→</span>
+              <article class="instruction-step">
+                <h4>2. Dekódování (decode)</h4>
+                <p>Procesor rozpozná operaci sčítání a určí vstupní hodnoty 5 a 3.</p>
+              </article>
+              <span class="instruction-arrow" aria-hidden="true">→</span>
+              <article class="instruction-step">
+                <h4>3. Vykonání (execute)</h4>
+                <p>Arithmetic-logic unit provede výpočet 5 + 3 = 8 a výsledek může uložit do registru nebo paměti.</p>
+              </article>
+            </div>
+            <p class="note"><strong>Výsledek:</strong> hodnota 5 se zvýší o 3 na hodnotu 8.</p>
+          </section>
+
+          <section id="rozdil-architektur">
+            <h3>6.3 Hlavní rozdíl mezi architekturami</h3>
+            <p>Von Neumannův model používá pro instrukce i data společnou paměť a přenosovou cestu.</p>
+            <p>Harvardský model odděluje paměť instrukcí od paměti dat a nabízí samostatnou cestu pro každý typ.</p>
+            <p>Skutečné procesory často kombinují rysy obou modelů, například oddělené instrukční a datové cache nad sdílenou hlavní pamětí.</p>
+          </section>
+
+          <section id="historicky-prehled">
+            <h3>6.4 Historické mezníky</h3>
+            <div class="history-timeline">
+              <article class="history-card">
+                <h4>1944 · Harvard Mark I</h4>
+                <dl><dt>Přínos</dt><dd>Automatizovaný stroj používal oddělené prostředky pro řídicí instrukce a numerická data; stal se známým příkladem Harvardských principů.</dd></dl>
+              </article>
+              <article class="history-card">
+                <h4>1945 · První návrh EDVAC</h4>
+                <dl><dt>Přínos</dt><dd>John von Neumann popsal návrh počítače, který ukládá program i data do jednotné paměti a vykonává instrukce postupně.</dd></dl>
+              </article>
+              <article class="history-card">
+                <h4>1949 · EDSAC</h4>
+                <dl><dt>Přínos</dt><dd>První prakticky provozovaný počítač s uloženým programem podle von Neumannova principu, který běžel na univerzitě v Cambridge.</dd></dl>
+              </article>
+              <article class="history-card">
+                <h4>1971 · Mikroprocesor Intel 4004</h4>
+                <dl><dt>Přínos</dt><dd>Funkce procesoru shrnuté do jednoho čipu umožnily menší a dostupnější počítačové systémy.</dd></dl>
+              </article>
+              <article class="history-card">
+                <h4>Od 80. let · Integrované cache paměti</h4>
+                <dl><dt>Přínos</dt><dd>Oddělené instrukční a datové cache zrychlily přístup k různým typům informací a ukázaly kombinaci obou architektonických přístupů.</dd></dl>
+              </article>
+            </div>
+            <p class="source"><strong>Zkontrolované zdroje:</strong> IBM, <a href="https://www.ibm.com/history/harvard-mark-1" target="_blank" rel="noopener noreferrer">Harvard Mark I</a>; Computer History Museum, <a href="https://www.computerhistory.org/revolution/birth-of-the-computer/4/87" target="_blank" rel="noopener noreferrer">The Stored-Program Concept</a>; Computer History Museum, <a href="https://www.computerhistory.org/timeline/1949/" target="_blank" rel="noopener noreferrer">Timeline 1949 – EDSAC</a>; Intel, <a href="https://www.intel.com/content/www/us/en/history/virtual-vault/articles/the-intel-4004.html" target="_blank" rel="noopener noreferrer">The Intel 4004</a>. Přístup 18. 11. 2026.</p>
+          </section>
+
+          <p class="note"><strong>Kontrola:</strong> Obě schémata jsou označená; průchod instrukce má tři jasné fáze; historický přehled má pěti položek s rokem nebo obdobím a přínosem.</p>
         </section>
       </article>
     </div>
